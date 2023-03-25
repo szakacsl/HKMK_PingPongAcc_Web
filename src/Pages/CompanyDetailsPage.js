@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Switch from "react-switch";
 
@@ -11,6 +11,12 @@ class CompanyDetailsPage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.companyName = props.companyName;
+    this.companyAddress = props.companyAddress;
+    this.vouchers = props.vouchers;
+    this.password = props.password;
+    this.products = props.products;
+
     this.mode = "view";
   }
 
@@ -21,6 +27,26 @@ class CompanyDetailsPage extends React.Component {
       this.mode = "edit";
     }
 
+    this.forceUpdate();
+  };
+
+  handleCompanyNameChange = (event) => {
+    this.companyName = event.target.value;
+    this.forceUpdate();
+  };
+
+  handleCompanyAddressChange = (event) => {
+    this.companyAddress = event.target.value;
+    this.forceUpdate();
+  };
+
+  handleVouchersChange = (value) => {
+    this.vouchers = value;
+    this.forceUpdate();
+  };
+
+  handlePasswordChange = (event) => {
+    this.password = event.target.value;
     this.forceUpdate();
   };
 
@@ -36,22 +62,34 @@ class CompanyDetailsPage extends React.Component {
                 <tr>
                   <td>
                     Name:{" "}
-                    <input type="text" value={this.props.companyName}></input>
+                    <input
+                      type="text"
+                      value={this.companyName}
+                      onChange={this.handleCompanyNameChange}
+                    ></input>
                   </td>
                   <td>
                     Address:{" "}
                     <input
                       type="text"
-                      value={this.props.companyAddress}
+                      value={this.companyAddress}
+                      onChange={this.handleCompanyAddressChange}
                     ></input>
                   </td>
                   <td>
                     Vouchers:{" "}
-                    <Switch checked={this.props.vouchers} onChange={() => {}} />
+                    <Switch
+                      checked={this.vouchers}
+                      onChange={this.handleVouchersChange}
+                    />
                   </td>
                   <td>
                     Password:{" "}
-                    <input type="password" value={this.props.password}></input>
+                    <input
+                      type="password"
+                      value={this.password}
+                      onChange={this.handlePasswordChange}
+                    ></input>
                   </td>
                 </tr>
               </tbody>
@@ -62,7 +100,7 @@ class CompanyDetailsPage extends React.Component {
           </button>
 
           <Section name="Products" />
-          <Products products={this.props.products} />
+          <Products products={this.products} />
         </>
       );
     }
@@ -78,11 +116,11 @@ class CompanyDetailsPage extends React.Component {
           <table>
             <tbody>
               <tr>
-                <td>Name: {this.props.companyName}</td>
-                <td>Address: {this.props.companyAddress}</td>
+                <td>Name: {this.companyName}</td>
+                <td>Address: {this.companyAddress}</td>
                 <td>
                   Vouchers:{" "}
-                  <Switch checked={this.props.vouchers} onChange={() => {}} />
+                  <Switch checked={this.vouchers} onChange={() => {}} />
                 </td>
               </tr>
             </tbody>
@@ -93,7 +131,7 @@ class CompanyDetailsPage extends React.Component {
         </button>
 
         <Section name="Products" />
-        <Products products={this.props.products} />
+        <Products products={this.products} />
       </>
     );
   }
