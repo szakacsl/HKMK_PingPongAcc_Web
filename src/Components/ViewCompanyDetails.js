@@ -38,7 +38,7 @@ class ViewCompanyDetails extends React.Component {
         </div>
 
         <Section name="Products" />
-        <Products products={[]} />
+        <Products products={[]} mode="view" />
       </>
     );
   }

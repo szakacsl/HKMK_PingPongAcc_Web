@@ -8,6 +8,7 @@ class Products extends React.Component {
     super(props);
 
     this.products = props.products;
+    this.mode = props.mode;
 
     this.products = [
       {
@@ -35,6 +36,25 @@ class Products extends React.Component {
   }
 
   render() {
+    if (this.mode === "edit") {
+      return (
+        <>
+          {this.products &&
+            this.products.map((p) => (
+              <Product
+                category={p.category}
+                unit={p.unit}
+                amount={p.amount}
+                price={p.price}
+                conversionRate={p.conversionRate}
+                mode={this.mode}
+                key={p.index}
+              />
+            ))}
+        </>
+      );
+    }
+
     return (
       <>
         {this.products &&
@@ -45,6 +65,7 @@ class Products extends React.Component {
               amount={p.amount}
               price={p.price}
               conversionRate={p.conversionRate}
+              mode={this.mode}
               key={p.index}
             />
           ))}
@@ -54,7 +75,8 @@ class Products extends React.Component {
 }
 
 Products.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  products: PropTypes.arrayOf(PropTypes.object),
+  mode: PropTypes.string,
 };
 
 export default Products;

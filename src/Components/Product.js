@@ -10,6 +10,8 @@ class Product extends React.Component {
     this.amount = props.amount;
     this.price = props.price;
     this.conversionRate = props.conversionRate;
+
+    this.mode = props;
   }
 
   render() {
@@ -32,6 +34,7 @@ class Product extends React.Component {
 
 Product.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  mode: PropTypes.string.isRequired,
 };
 
 export default Product;
