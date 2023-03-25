@@ -15,8 +15,6 @@ class CompanyDetailsPage extends React.Component {
   }
 
   switchMode = () => {
-    console.log("switching modes");
-
     if (this.mode === "edit") {
       this.mode = "view";
     } else {

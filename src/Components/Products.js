@@ -8,53 +8,33 @@ class Products extends React.Component {
     super(props);
 
     this.products = props.products;
-    this.mode = props.mode;
 
     this.products = [
       {
         category: "cat A",
         unit: "kg",
-        amount: "100",
-        price: "0.12",
-        conversionRate: "0.75",
+        amount: 100,
+        price: 0.12,
+        conversionRate: 0.75,
       },
       {
         category: "cat B",
         unit: "g",
-        amount: "100",
-        price: "12",
-        conversionRate: "0.75",
+        amount: 100,
+        price: 12,
+        conversionRate: 0.75,
       },
       {
         category: "cat C",
         unit: "l",
-        amount: "50",
-        price: "0.52",
-        conversionRate: "0.75",
+        amount: 50,
+        price: 0.52,
+        conversionRate: 0.75,
       },
     ];
   }
 
   render() {
-    if (this.mode === "edit") {
-      return (
-        <>
-          {this.products &&
-            this.products.map((p) => (
-              <Product
-                category={p.category}
-                unit={p.unit}
-                amount={p.amount}
-                price={p.price}
-                conversionRate={p.conversionRate}
-                mode={this.mode}
-                key={p.index}
-              />
-            ))}
-        </>
-      );
-    }
-
     return (
       <>
         {this.products &&
@@ -65,7 +45,6 @@ class Products extends React.Component {
               amount={p.amount}
               price={p.price}
               conversionRate={p.conversionRate}
-              mode={this.mode}
               key={p.index}
             />
           ))}
@@ -76,7 +55,6 @@ class Products extends React.Component {
 
 Products.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object),
-  mode: PropTypes.string,
 };
 
 export default Products;
