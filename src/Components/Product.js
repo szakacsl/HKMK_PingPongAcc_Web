@@ -11,7 +11,7 @@ class Product extends React.Component {
     this.price = props.price;
     this.conversionRate = props.conversionRate;
 
-    this.mode = "view";
+    this.mode = props.mode ? props.mode : "view";
   }
 
   switchMode = () => {
@@ -98,9 +98,6 @@ class Product extends React.Component {
                     Save
                   </button>
                 </td>
-                <td>
-                  <button type="button">Remove</button>
-                </td>
               </tr>
             </tbody>
           </table>
@@ -125,9 +122,6 @@ class Product extends React.Component {
                   Edit
                 </button>
               </td>
-              <td>
-                <button type="button">Remove</button>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -141,7 +135,8 @@ Product.propTypes = {
   unit: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  conversionRate: PropTypes.number.isRequired,
+  conversionRate: PropTypes.number,
+  mode: PropTypes.string,
 };
 
 export default Product;

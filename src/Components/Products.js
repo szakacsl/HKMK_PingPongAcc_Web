@@ -34,20 +34,45 @@ class Products extends React.Component {
     ];
   }
 
+  addProduct = () => {
+    this.products.push({
+      category: "",
+      unit: "",
+      amount: 0,
+      price: 0.0,
+      conversionRate: 0.75,
+      mode: "edit",
+    });
+    this.forceUpdate();
+  };
+
+  removeProduct = (index) => {
+    this.products.splice(index, 1);
+    this.forceUpdate();
+  };
+
   render() {
     return (
       <>
         {this.products &&
           this.products.map((p, index) => (
-            <Product
-              category={p.category}
-              unit={p.unit}
-              amount={p.amount}
-              price={p.price}
-              conversionRate={p.conversionRate}
-              key={index}
-            />
+            <div style={{ display: "flex" }} key={index}>
+              <Product
+                category={p.category}
+                unit={p.unit}
+                amount={p.amount}
+                price={p.price}
+                conversionRate={p.conversionRate}
+                mode={p.mode}
+              />
+              <button type="button" onClick={() => this.removeProduct(index)}>
+                Remove
+              </button>
+            </div>
           ))}
+        <button type="button" onClick={this.addProduct}>
+          Add Product
+        </button>
       </>
     );
   }
