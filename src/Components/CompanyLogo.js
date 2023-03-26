@@ -6,6 +6,9 @@ class CompanyLogo extends React.Component {
     super(props);
 
     this.imageSrc = props.imageSrc ? props.imageSrc : "/img/placeholder.png";
+
+    console.log(this.imageSrc);
+
     this.style = props.style;
   }
 
