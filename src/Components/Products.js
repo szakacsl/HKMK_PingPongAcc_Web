@@ -19,7 +19,7 @@ class Products extends React.Component {
       },
       {
         category: "cat B",
-        unit: "g",
+        unit: "l",
         amount: 100,
         price: 12,
         conversionRate: 0.75,

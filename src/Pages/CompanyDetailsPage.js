@@ -133,6 +133,26 @@ class CompanyDetailsPage extends React.Component {
             <Section name="Products" />
             <Products products={this.products} />
           </div>
+          <div
+            style={{ width: window.innerWidth / 2, height: window.innerHeight }}
+          >
+            <h2 style={{ marginTop: "-5px" }}>Statistics</h2>
+            <div style={{ marginTop: "-15px" }}>
+              <Section name="Number of converted users during the years" />
+              <img
+                src="/img/number_of_users.png"
+                alt=""
+                style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+              ></img>
+
+              <Section name="Number of converted users during the years" />
+              <img
+                src="/img/amount_of_products_collected_by_category.png"
+                alt=""
+                style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+              ></img>
+            </div>
+          </div>
         </div>
       );
     }
@@ -143,6 +163,7 @@ class CompanyDetailsPage extends React.Component {
     return (
       <div
         style={{
+          display: "flex",
           backgroundColor: "#EAE0CC",
           width: window.innerWidth,
           height: window.innerHeight,
@@ -211,6 +232,26 @@ class CompanyDetailsPage extends React.Component {
 
           <Section name="Products" />
           <Products products={this.products} />
+        </div>
+        <div
+          style={{ width: window.innerWidth / 2, height: window.innerHeight }}
+        >
+          <h2 style={{ marginTop: "-5px" }}>Statistics</h2>
+          <div style={{ marginTop: "-15px" }}>
+            <Section name="Number of converted users during the years" />
+            <img
+              src="/img/number_of_users.png"
+              alt=""
+              style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+            ></img>
+
+            <Section name="Number of converted users during the years" />
+            <img
+              src="/img/amount_of_products_collected_by_category.png"
+              alt=""
+              style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+            ></img>
+          </div>
         </div>
       </div>
     );
