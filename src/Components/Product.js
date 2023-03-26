@@ -24,6 +24,26 @@ class Product extends React.Component {
     this.forceUpdate();
   };
 
+  handleCategoryChange = (event) => {
+    this.category = event.target.value;
+    this.forceUpdate();
+  };
+
+  handleUnitChange = (event) => {
+    this.unit = event.target.value;
+    this.forceUpdate();
+  };
+
+  handleAmountChange = (event) => {
+    this.amount = event.target.value;
+    this.forceUpdate();
+  };
+
+  handlePriceChange = (event) => {
+    this.price = event.target.value;
+    this.forceUpdate();
+  };
+
   render() {
     if (this.mode === "edit") {
       return (
@@ -32,23 +52,46 @@ class Product extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  Category: <input type="text" value={this.category}></input>
+                  Category:{" "}
+                  <select
+                    value={this.category}
+                    onChange={this.handleCategoryChange}
+                  >
+                    <option value="clothing">Clothing</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="food">Food</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="metals">Metals</option>
+                    <option value="toys">Toys</option>
+                    <option value="wasted oil">Wasted Oil</option>
+                  </select>
                 </td>
                 <td>
                   Unit:{" "}
-                  <select value={this.unit}>
-                    <option value="liter">l</option>
+                  <select value={this.unit} onChange={this.handleUnitChange}>
+                    <option value="l">l</option>
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                   </select>
                 </td>
                 <td>
                   Amount:{" "}
-                  <input type="number" min={0} value={this.category}></input>
+                  <input
+                    type="number"
+                    value={this.amount}
+                    min={0}
+                    onChange={this.handleAmountChange}
+                  ></input>
                 </td>
                 <td>
                   Price:{" "}
-                  <input type="number" min={0} value={this.category}></input>
+                  <input
+                    type="number"
+                    value={this.price}
+                    min={0}
+                    step={0.1}
+                    onChange={this.handlePriceChange}
+                  ></input>
                 </td>
                 <td>
                   <button type="button" onClick={this.switchMode}>
@@ -56,7 +99,7 @@ class Product extends React.Component {
                   </button>
                 </td>
                 <td>
-                  <button type="button">Delete</button>
+                  <button type="button">Remove</button>
                 </td>
               </tr>
             </tbody>
@@ -83,7 +126,7 @@ class Product extends React.Component {
                 </button>
               </td>
               <td>
-                <button type="button">Delete</button>
+                <button type="button">Remove</button>
               </td>
             </tr>
           </tbody>

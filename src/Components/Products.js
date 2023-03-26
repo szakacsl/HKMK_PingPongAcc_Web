@@ -38,14 +38,14 @@ class Products extends React.Component {
     return (
       <>
         {this.products &&
-          this.products.map((p) => (
+          this.products.map((p, index) => (
             <Product
               category={p.category}
               unit={p.unit}
               amount={p.amount}
               price={p.price}
               conversionRate={p.conversionRate}
-              key={p.index}
+              key={index}
             />
           ))}
       </>
