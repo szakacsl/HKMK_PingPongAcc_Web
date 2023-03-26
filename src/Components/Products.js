@@ -65,7 +65,22 @@ class Products extends React.Component {
                 conversionRate={p.conversionRate}
                 mode={p.mode}
               />
-              <button type="button" onClick={() => this.removeProduct(index)}>
+              <button
+                type="button"
+                onClick={() => this.removeProduct(index)}
+                style={{
+                  width: "70px",
+                  height: "25px",
+                  textAlign: "center",
+                  backgroundColor: "#C9ADA1",
+                  border: "none",
+                  color: "white",
+                  fontWeight: "bold",
+                  marginLeft: "10px",
+                  marginBottom: "5px",
+                  marginTop: "8px",
+                }}
+              >
                 Remove
               </button>
             </div>
@@ -81,7 +96,7 @@ class Products extends React.Component {
             border: "none",
             color: "white",
             fontWeight: "bold",
-            marginLeft: "10px",
+            marginLeft: "20px",
             marginBottom: "5px",
           }}
         >

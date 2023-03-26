@@ -76,7 +76,7 @@ class CompanyDetailsPage extends React.Component {
               <table>
                 <tbody>
                   <tr>
-                    <td>
+                    <td style={{ fontWeight: "bold" }}>
                       Name:{" "}
                       <input
                         type="text"
@@ -84,7 +84,7 @@ class CompanyDetailsPage extends React.Component {
                         onChange={this.handleCompanyNameChange}
                       ></input>
                     </td>
-                    <td>
+                    <td style={{ fontWeight: "bold" }}>
                       Address:{" "}
                       <input
                         type="text"
@@ -92,14 +92,14 @@ class CompanyDetailsPage extends React.Component {
                         onChange={this.handleCompanyAddressChange}
                       ></input>
                     </td>
-                    <td>
+                    <td style={{ fontWeight: "bold" }}>
                       Vouchers:{" "}
                       <Switch
                         checked={this.vouchers}
                         onChange={this.handleVouchersChange}
                       />
                     </td>
-                    <td>
+                    <td style={{ fontWeight: "bold" }}>
                       Password:{" "}
                       <input
                         type="password"
@@ -111,7 +111,22 @@ class CompanyDetailsPage extends React.Component {
                 </tbody>
               </table>
             </div>
-            <button type="button" onClick={this.switchMode}>
+            <button
+              type="button"
+              onClick={this.switchMode}
+              style={{
+                width: "70px",
+                height: "25px",
+                textAlign: "center",
+                backgroundColor: "#4D6A6D",
+                border: "none",
+                color: "white",
+                fontWeight: "bold",
+                marginLeft: "10px",
+                marginBottom: "5px",
+                marginTop: "5px",
+              }}
+            >
               Save
             </button>
 
@@ -149,10 +164,27 @@ class CompanyDetailsPage extends React.Component {
             <table>
               <tbody>
                 <tr>
-                  <td>Name: {this.companyName}</td>
-                  <td>Address: {this.companyAddress}</td>
+                  <td
+                    style={{
+                      fontWeight: "bold",
+                      padding: "0px 5px 0px 20px",
+                    }}
+                  >
+                    Name:
+                  </td>
+                  <td>{this.companyName}</td>
+                  <td
+                    style={{ fontWeight: "bold", padding: "0px 5px 0px 20px" }}
+                  >
+                    Address:
+                  </td>
+                  <td>{this.companyAddress}</td>
+                  <td
+                    style={{ fontWeight: "bold", padding: "0px 5px 0px 20px" }}
+                  >
+                    Vouchers:
+                  </td>
                   <td>
-                    Vouchers:{" "}
                     <Switch checked={this.vouchers} onChange={() => {}} />
                   </td>
                 </tr>
@@ -170,7 +202,7 @@ class CompanyDetailsPage extends React.Component {
               border: "none",
               color: "white",
               fontWeight: "bold",
-              marginLeft: "10px",
+              marginLeft: "20px",
               marginBottom: "5px",
             }}
           >

@@ -17,6 +17,7 @@ class Section extends React.Component {
           backgroundColor: "#A0A083",
           paddingLeft: "20px",
           fontWeight: "bold",
+          fontSize: "18px",
         }}
       >
         {this.sectionName}

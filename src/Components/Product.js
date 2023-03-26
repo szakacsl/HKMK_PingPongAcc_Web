@@ -48,11 +48,13 @@ class Product extends React.Component {
     if (this.mode === "edit") {
       return (
         <>
-          <table>
+          <table style={{ marginLeft: "10px" }}>
             <tbody>
               <tr>
+                <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                  Category:
+                </td>
                 <td>
-                  Category:{" "}
                   <select
                     value={this.category}
                     onChange={this.handleCategoryChange}
@@ -66,35 +68,58 @@ class Product extends React.Component {
                     <option value="wasted oil">Wasted Oil</option>
                   </select>
                 </td>
+                <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                  Unit:
+                </td>
                 <td>
-                  Unit:{" "}
                   <select value={this.unit} onChange={this.handleUnitChange}>
                     <option value="l">l</option>
                     <option value="kg">kg</option>
                     <option value="pcs">pcs</option>
                   </select>
                 </td>
+                <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                  Amount:
+                </td>
                 <td>
-                  Amount:{" "}
                   <input
                     type="number"
                     value={this.amount}
                     min={0}
                     onChange={this.handleAmountChange}
+                    style={{ width: "50px" }}
                   ></input>
                 </td>
+                <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                  Price:
+                </td>
                 <td>
-                  Price:{" "}
                   <input
                     type="number"
                     value={this.price}
                     min={0}
                     step={0.1}
                     onChange={this.handlePriceChange}
+                    style={{ width: "50px" }}
                   ></input>
                 </td>
                 <td>
-                  <button type="button" onClick={this.switchMode}>
+                  <button
+                    type="button"
+                    onClick={this.switchMode}
+                    style={{
+                      width: "70px",
+                      height: "25px",
+                      textAlign: "center",
+                      backgroundColor: "#4D6A6D",
+                      border: "none",
+                      color: "white",
+                      fontWeight: "bold",
+                      marginLeft: "10px",
+                      marginBottom: "5px",
+                      marginTop: "5px",
+                    }}
+                  >
                     Save
                   </button>
                 </td>
@@ -110,15 +135,42 @@ class Product extends React.Component {
     ///////////////////////
     return (
       <>
-        <table>
+        <table style={{ marginLeft: "10px" }}>
           <tbody>
             <tr>
-              <td>Category: {this.category}</td>
-              <td>Unit: {this.unit}</td>
-              <td>Amount: {this.amount}</td>
-              <td>Price: {this.price}</td>
+              <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                Category:
+              </td>
+              <td style={{ width: "50px" }}>{this.category}</td>
+              <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                Unit:
+              </td>
+              <td style={{ width: "50px" }}>{this.unit}</td>
+              <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                Amount:
+              </td>
+              <td style={{ width: "50px" }}>{this.amount}</td>
+              <td style={{ fontWeight: "bold", padding: "0px 5px 0px 10px" }}>
+                Price:
+              </td>
+              <td style={{ width: "50px" }}>{this.price}</td>
               <td>
-                <button type="button" onClick={this.switchMode}>
+                <button
+                  type="button"
+                  onClick={this.switchMode}
+                  style={{
+                    width: "70px",
+                    height: "25px",
+                    textAlign: "center",
+                    backgroundColor: "#798478",
+                    border: "none",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginLeft: "35px",
+                    marginBottom: "5px",
+                    marginTop: "5px",
+                  }}
+                >
                   Edit
                 </button>
               </td>
