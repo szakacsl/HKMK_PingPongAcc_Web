@@ -54,7 +54,7 @@ class LoginPage extends React.Component {
             style={{
               width: window.innerWidth * 0.32,
               height: window.innerHeight,
-              backgroundColor: "#EAE0CC ",
+              backgroundColor: "#EAE0CC",
             }}
           >
             <div

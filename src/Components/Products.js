@@ -70,7 +70,21 @@ class Products extends React.Component {
               </button>
             </div>
           ))}
-        <button type="button" onClick={this.addProduct}>
+        <button
+          type="button"
+          onClick={this.addProduct}
+          style={{
+            width: "100px",
+            height: "25px",
+            textAlign: "center",
+            backgroundColor: "#798478",
+            border: "none",
+            color: "white",
+            fontWeight: "bold",
+            marginLeft: "10px",
+            marginBottom: "5px",
+          }}
+        >
           Add Product
         </button>
       </>

@@ -53,55 +53,72 @@ class CompanyDetailsPage extends React.Component {
   render() {
     if (this.mode === "edit") {
       return (
-        <>
-          <CompanyLogo />
-          <Section name="Identification" />
-          <div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    Name:{" "}
-                    <input
-                      type="text"
-                      value={this.companyName}
-                      onChange={this.handleCompanyNameChange}
-                    ></input>
-                  </td>
-                  <td>
-                    Address:{" "}
-                    <input
-                      type="text"
-                      value={this.companyAddress}
-                      onChange={this.handleCompanyAddressChange}
-                    ></input>
-                  </td>
-                  <td>
-                    Vouchers:{" "}
-                    <Switch
-                      checked={this.vouchers}
-                      onChange={this.handleVouchersChange}
-                    />
-                  </td>
-                  <td>
-                    Password:{" "}
-                    <input
-                      type="password"
-                      value={this.password}
-                      onChange={this.handlePasswordChange}
-                    ></input>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <button type="button" onClick={this.switchMode}>
-            Save
-          </button>
+        <div
+          style={{
+            backgroundColor: "#EAE0CC",
+            width: window.innerWidth,
+            height: window.innerHeight,
+          }}
+        >
+          <div
+            style={{
+              width: window.innerWidth / 2,
+              height: window.innerHeight,
+              backgroundColor: "",
+            }}
+          >
+            <CompanyLogo
+              imageSrc="/img/client_co_logo.png"
+              style={{ width: "200px", height: "200px" }}
+            />
+            <Section name="Identification" />
+            <div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      Name:{" "}
+                      <input
+                        type="text"
+                        value={this.companyName}
+                        onChange={this.handleCompanyNameChange}
+                      ></input>
+                    </td>
+                    <td>
+                      Address:{" "}
+                      <input
+                        type="text"
+                        value={this.companyAddress}
+                        onChange={this.handleCompanyAddressChange}
+                      ></input>
+                    </td>
+                    <td>
+                      Vouchers:{" "}
+                      <Switch
+                        checked={this.vouchers}
+                        onChange={this.handleVouchersChange}
+                      />
+                    </td>
+                    <td>
+                      Password:{" "}
+                      <input
+                        type="password"
+                        value={this.password}
+                        onChange={this.handlePasswordChange}
+                      ></input>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button type="button" onClick={this.switchMode}>
+              Save
+            </button>
 
-          <Section name="Products" />
-          <Products products={this.products} />
-        </>
+            <Section name="Products" />
+            <Products products={this.products} />
+          </div>
+        </div>
       );
     }
 
@@ -109,30 +126,61 @@ class CompanyDetailsPage extends React.Component {
     /////  VIEW MODE  /////
     ///////////////////////
     return (
-      <>
-        <CompanyLogo />
-        <Section name="Identification" />
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <td>Name: {this.companyName}</td>
-                <td>Address: {this.companyAddress}</td>
-                <td>
-                  Vouchers:{" "}
-                  <Switch checked={this.vouchers} onChange={() => {}} />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <button type="button" onClick={this.switchMode}>
-          Edit
-        </button>
+      <div
+        style={{
+          backgroundColor: "#EAE0CC",
+          width: window.innerWidth,
+          height: window.innerHeight,
+        }}
+      >
+        <div
+          style={{
+            width: window.innerWidth / 2,
+            height: window.innerHeight,
+            backgroundColor: "",
+          }}
+        >
+          <CompanyLogo
+            imageSrc="/img/client_co_logo.png"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <Section name="Identification" />
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Name: {this.companyName}</td>
+                  <td>Address: {this.companyAddress}</td>
+                  <td>
+                    Vouchers:{" "}
+                    <Switch checked={this.vouchers} onChange={() => {}} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            type="button"
+            onClick={this.switchMode}
+            style={{
+              width: "70px",
+              height: "25px",
+              textAlign: "center",
+              backgroundColor: "#798478",
+              border: "none",
+              color: "white",
+              fontWeight: "bold",
+              marginLeft: "10px",
+              marginBottom: "5px",
+            }}
+          >
+            Edit
+          </button>
 
-        <Section name="Products" />
-        <Products products={this.products} />
-      </>
+          <Section name="Products" />
+          <Products products={this.products} />
+        </div>
+      </div>
     );
   }
 }
