@@ -19,7 +19,7 @@ class Products extends React.Component {
       },
       {
         category: "cat B",
-        unit: "g",
+        unit: "l",
         amount: 100,
         price: 12,
         conversionRate: 0.75,
@@ -65,12 +65,41 @@ class Products extends React.Component {
                 conversionRate={p.conversionRate}
                 mode={p.mode}
               />
-              <button type="button" onClick={() => this.removeProduct(index)}>
+              <button
+                type="button"
+                onClick={() => this.removeProduct(index)}
+                style={{
+                  width: "70px",
+                  height: "25px",
+                  textAlign: "center",
+                  backgroundColor: "#C9ADA1",
+                  border: "none",
+                  color: "white",
+                  fontWeight: "bold",
+                  marginLeft: "10px",
+                  marginBottom: "5px",
+                  marginTop: "8px",
+                }}
+              >
                 Remove
               </button>
             </div>
           ))}
-        <button type="button" onClick={this.addProduct}>
+        <button
+          type="button"
+          onClick={this.addProduct}
+          style={{
+            width: "100px",
+            height: "25px",
+            textAlign: "center",
+            backgroundColor: "#798478",
+            border: "none",
+            color: "white",
+            fontWeight: "bold",
+            marginLeft: "20px",
+            marginBottom: "5px",
+          }}
+        >
           Add Product
         </button>
       </>

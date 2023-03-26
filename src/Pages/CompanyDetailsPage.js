@@ -53,55 +53,107 @@ class CompanyDetailsPage extends React.Component {
   render() {
     if (this.mode === "edit") {
       return (
-        <>
-          <CompanyLogo />
-          <Section name="Identification" />
-          <div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    Name:{" "}
-                    <input
-                      type="text"
-                      value={this.companyName}
-                      onChange={this.handleCompanyNameChange}
-                    ></input>
-                  </td>
-                  <td>
-                    Address:{" "}
-                    <input
-                      type="text"
-                      value={this.companyAddress}
-                      onChange={this.handleCompanyAddressChange}
-                    ></input>
-                  </td>
-                  <td>
-                    Vouchers:{" "}
-                    <Switch
-                      checked={this.vouchers}
-                      onChange={this.handleVouchersChange}
-                    />
-                  </td>
-                  <td>
-                    Password:{" "}
-                    <input
-                      type="password"
-                      value={this.password}
-                      onChange={this.handlePasswordChange}
-                    ></input>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <button type="button" onClick={this.switchMode}>
-            Save
-          </button>
+        <div
+          style={{
+            backgroundColor: "#EAE0CC",
+            width: window.innerWidth,
+            height: window.innerHeight,
+          }}
+        >
+          <div
+            style={{
+              width: window.innerWidth / 2,
+              height: window.innerHeight,
+              backgroundColor: "",
+            }}
+          >
+            <CompanyLogo
+              imageSrc="/img/client_co_logo.png"
+              style={{ width: "200px", height: "200px" }}
+            />
+            <Section name="Identification" />
+            <div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td style={{ fontWeight: "bold" }}>
+                      Name:{" "}
+                      <input
+                        type="text"
+                        value={this.companyName}
+                        onChange={this.handleCompanyNameChange}
+                      ></input>
+                    </td>
+                    <td style={{ fontWeight: "bold" }}>
+                      Address:{" "}
+                      <input
+                        type="text"
+                        value={this.companyAddress}
+                        onChange={this.handleCompanyAddressChange}
+                      ></input>
+                    </td>
+                    <td style={{ fontWeight: "bold" }}>
+                      Vouchers:{" "}
+                      <Switch
+                        checked={this.vouchers}
+                        onChange={this.handleVouchersChange}
+                      />
+                    </td>
+                    <td style={{ fontWeight: "bold" }}>
+                      Password:{" "}
+                      <input
+                        type="password"
+                        value={this.password}
+                        onChange={this.handlePasswordChange}
+                      ></input>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button
+              type="button"
+              onClick={this.switchMode}
+              style={{
+                width: "70px",
+                height: "25px",
+                textAlign: "center",
+                backgroundColor: "#4D6A6D",
+                border: "none",
+                color: "white",
+                fontWeight: "bold",
+                marginLeft: "10px",
+                marginBottom: "5px",
+                marginTop: "5px",
+              }}
+            >
+              Save
+            </button>
 
-          <Section name="Products" />
-          <Products products={this.products} />
-        </>
+            <Section name="Products" />
+            <Products products={this.products} />
+          </div>
+          <div
+            style={{ width: window.innerWidth / 2, height: window.innerHeight }}
+          >
+            <h2 style={{ marginTop: "-5px" }}>Statistics</h2>
+            <div style={{ marginTop: "-15px" }}>
+              <Section name="Number of converted users during the years" />
+              <img
+                src="/img/number_of_users.png"
+                alt=""
+                style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+              ></img>
+
+              <Section name="Number of converted users during the years" />
+              <img
+                src="/img/amount_of_products_collected_by_category.png"
+                alt=""
+                style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+              ></img>
+            </div>
+          </div>
+        </div>
       );
     }
 
@@ -109,30 +161,99 @@ class CompanyDetailsPage extends React.Component {
     /////  VIEW MODE  /////
     ///////////////////////
     return (
-      <>
-        <CompanyLogo />
-        <Section name="Identification" />
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <td>Name: {this.companyName}</td>
-                <td>Address: {this.companyAddress}</td>
-                <td>
-                  Vouchers:{" "}
-                  <Switch checked={this.vouchers} onChange={() => {}} />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <button type="button" onClick={this.switchMode}>
-          Edit
-        </button>
+      <div
+        style={{
+          display: "flex",
+          backgroundColor: "#EAE0CC",
+          width: window.innerWidth,
+          height: window.innerHeight,
+        }}
+      >
+        <div
+          style={{
+            width: window.innerWidth / 2,
+            height: window.innerHeight,
+            backgroundColor: "",
+          }}
+        >
+          <CompanyLogo
+            imageSrc="/img/client_co_logo.png"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <Section name="Identification" />
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td
+                    style={{
+                      fontWeight: "bold",
+                      padding: "0px 5px 0px 20px",
+                    }}
+                  >
+                    Name:
+                  </td>
+                  <td>{this.companyName}</td>
+                  <td
+                    style={{ fontWeight: "bold", padding: "0px 5px 0px 20px" }}
+                  >
+                    Address:
+                  </td>
+                  <td>{this.companyAddress}</td>
+                  <td
+                    style={{ fontWeight: "bold", padding: "0px 5px 0px 20px" }}
+                  >
+                    Vouchers:
+                  </td>
+                  <td>
+                    <Switch checked={this.vouchers} onChange={() => {}} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            type="button"
+            onClick={this.switchMode}
+            style={{
+              width: "70px",
+              height: "25px",
+              textAlign: "center",
+              backgroundColor: "#798478",
+              border: "none",
+              color: "white",
+              fontWeight: "bold",
+              marginLeft: "20px",
+              marginBottom: "5px",
+            }}
+          >
+            Edit
+          </button>
 
-        <Section name="Products" />
-        <Products products={this.products} />
-      </>
+          <Section name="Products" />
+          <Products products={this.products} />
+        </div>
+        <div
+          style={{ width: window.innerWidth / 2, height: window.innerHeight }}
+        >
+          <h2 style={{ marginTop: "-5px" }}>Statistics</h2>
+          <div style={{ marginTop: "-15px" }}>
+            <Section name="Number of converted users during the years" />
+            <img
+              src="/img/number_of_users.png"
+              alt=""
+              style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+            ></img>
+
+            <Section name="Number of converted users during the years" />
+            <img
+              src="/img/amount_of_products_collected_by_category.png"
+              alt=""
+              style={{ width: "500px", height: "325px", marginLeft: "15%" }}
+            ></img>
+          </div>
+        </div>
+      </div>
     );
   }
 }

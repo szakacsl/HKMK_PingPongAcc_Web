@@ -1,8 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 import HeroImage from "../Components/HeroImage";
 import CompanyLogo from "../Components/CompanyLogo";
+
+import CompanyService from "../Services/CompanyService";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -25,7 +26,21 @@ class LoginPage extends React.Component {
   handleSignIn = () => {
     console.log("send sign in request");
 
-    window.location = "/company";
+    // const data = CompanyService.signIn(this.companyName, this.password);
+
+    if (this.companyName !== "" && this.password !== "") {
+      window.location = "/company";
+    }
+  };
+
+  handleSignUp = async () => {
+    console.log("send sign up request");
+
+    // const data = await CompanyService.signUp(this.companyName, this.password);
+
+    if (this.companyName !== "" && this.password !== "") {
+      window.location = "/company";
+    }
   };
 
   render() {
@@ -33,56 +48,88 @@ class LoginPage extends React.Component {
       <>
         <div style={{ display: "flex" }}>
           <div>
-            <HeroImage />
+            <HeroImage imageSrc="/img/hero.png" />
           </div>
           <div
             style={{
               width: window.innerWidth * 0.32,
               height: window.innerHeight,
-              // backgroundColor: "green",
+              backgroundColor: "#EAE0CC",
             }}
           >
             <div
               style={{
-                paddingLeft: "35%",
+                paddingLeft: "25%",
                 paddingTop: "35%",
                 width: window.innerWidth * 0.32,
               }}
             >
-              {/* <CompanyLogo imageSrc="../Assets/hkmk_app_logo.png" /> */}
-              <CompanyLogo style={{ width: "150 px", height: "150px" }} />
-              <table>
+              <CompanyLogo
+                imageSrc="/img/hkmk_app_logo.png"
+                style={{ width: "250 px", height: "250px" }}
+              />
+              <table style={{ paddingLeft: "4%" }}>
                 <tbody>
                   <tr>
                     <td>
-                      Company Name:
                       <input
                         type="text"
+                        placeholder="Company Name"
+                        style={{ width: "200px", height: "30px" }}
                         onChange={this.handleCompanyNameChange}
                       ></input>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      Password:
                       <input
                         type="password"
+                        placeholder="Password"
+                        style={{ width: "200px", height: "30px" }}
                         onChange={this.handlePasswordChange}
                       ></input>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <table>
+              <table style={{ paddingLeft: "4%" }}>
                 <tbody>
                   <tr>
-                    <td>
-                      <button type="button" onClick={this.handleSignIn}>
+                    <td style={{ display: "flex" }}>
+                      <button
+                        type="button"
+                        style={{
+                          float: "left",
+                          textAlign: "left",
+                          width: "70px",
+                          height: "25px",
+                          textAlign: "center",
+                          backgroundColor: "#798478",
+                          border: "none",
+                          color: "white",
+                          fontWeight: "bold",
+                        }}
+                        onClick={this.handleSignIn}
+                      >
                         Sign In
                       </button>
-                    </td>
-                    <td>
-                      <button type="button">Sign Up</button>
+
+                      <button
+                        type="button"
+                        style={{
+                          marginLeft: "66px",
+                          width: "70px",
+                          height: "25px",
+                          textAlign: "center",
+                          backgroundColor: "white",
+                          border: "none",
+                          color: "#798478",
+                          fontWeight: "bold",
+                        }}
+                        onClick={this.handleSignUp}
+                      >
+                        Sign Up
+                      </button>
                     </td>
                   </tr>
                 </tbody>

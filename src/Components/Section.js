@@ -11,7 +11,18 @@ class Section extends React.Component {
   }
 
   render() {
-    return <div>{this.sectionName}</div>;
+    return (
+      <div
+        style={{
+          backgroundColor: "#A0A083",
+          paddingLeft: "20px",
+          fontWeight: "bold",
+          fontSize: "18px",
+        }}
+      >
+        {this.sectionName}
+      </div>
+    );
   }
 }
 
